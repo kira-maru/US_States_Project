@@ -1,10 +1,4 @@
 from turtle import Turtle
-import pandas
-
-data = pandas.read_csv("50_states.csv")
-STATES = data.state.to_list()
-STATES_NUMBER = len(STATES)
-
 
 class Track(Turtle):
 
