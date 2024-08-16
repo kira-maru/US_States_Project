@@ -28,7 +28,7 @@ def game_on():
 
         elif answer == "Exit":
             to_learn_states = [state for state in STATES if state not in GUESSED_STATES]
-            data_state = pandas.DataFrame(TO_LEARN_STATES)
+            data_state = pandas.DataFrame(to_learn_states)
             data_state.to_csv("states_to_learn.csv")
 
             turtle.bye()
