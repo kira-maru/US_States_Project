@@ -7,7 +7,6 @@ data = pandas.read_csv("50_states.csv")
 STATES = data.state.to_list()
 STATES_NUMBER = len(STATES)
 GUESSED_STATES = []
-TO_LEARN_STATES = []
 
 tracking = Track()
 screen = turtle.Screen()
@@ -28,9 +27,7 @@ def game_on():
             GUESSED_STATES.append(answer)
 
         elif answer == "Exit":
-            for missing_state in STATES:
-                if missing_state not in GUESSED_STATES:
-                    TO_LEARN_STATES.append(missing_state)
+            to_learn_states = [state for state in STATES if state not in GUESSED_STATES]
             data_state = pandas.DataFrame(TO_LEARN_STATES)
             data_state.to_csv("states_to_learn.csv")
 
